@@ -1,0 +1,21 @@
+@mixin trans($time) {
+  transition: all linear $time;
+  -moz-transition: all linear $time;
+  -ms-transition: all linear $time;
+  -o-transition: all linear $time;
+  -webkit-transition: all linear $time;
+}
+
+@mixin before() {
+  content: "";
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  left: -35px;
+  top: 0;
+  background: $a-hov;
+  z-index: -1;
+  transform: skew(55deg);
+}
+
+// mixins

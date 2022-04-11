@@ -1,0 +1,75 @@
+@import "variables";
+@import "mixin";
+// partials import
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/*================================
+common css ends
+================================= */
+
+nav {
+  height: 50px;
+  background: $nav-bg;
+  .nav-content {
+    height: 100%;
+    background: $nav-con-bg;
+    margin: 0 auto;
+    width: 1170px;
+    display: flex;
+    .logo {
+      width: 170px;
+      background: $logo-bg;
+      height: 100%;
+    }
+    .list {
+      width: 1000px;
+      height: 100%;
+      background: $list-bg;
+      ul {
+        display: flex;
+        justify-content: end;
+        li {
+          a {
+            color: #000;
+            text-transform: capitalize;
+            font-size: 14px;
+            display: block;
+            padding: 0 20px;
+            line-height: 50px;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            @include trans(0.4s);
+            &::before {
+              @include before();
+              @include trans(0.6s);
+            }
+            &:hover {
+              color: #fff;
+              &::before {
+                width: 195%;
+                transform: skew(0deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
